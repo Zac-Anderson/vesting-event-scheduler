@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.vestEvent.VestResponseSerializerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-04-07T11:07:57" hostname="Zacharys-Mac-mini.local" time="0.071">
+  <properties/>
+  <testcase name="serialize when handling VEST types returns all vest events as vest responses()" classname="app.vestEvent.VestResponseSerializerTest" time="0.066"/>
+  <testcase name="serialize does not subtract the quantity when dealing with an invalid CANCEL event()" classname="app.vestEvent.VestResponseSerializerTest" time="0.001"/>
+  <testcase name="serialize when handling CANCEL types subtracts the quantity of matching vest awards()" classname="app.vestEvent.VestResponseSerializerTest" time="0.001"/>
+  <testcase name="serialize when handling VEST types adds the quantity of matching vest awards()" classname="app.vestEvent.VestResponseSerializerTest" time="0.001"/>
+  <testcase name="serialize handles out of date order events()" classname="app.vestEvent.VestResponseSerializerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
