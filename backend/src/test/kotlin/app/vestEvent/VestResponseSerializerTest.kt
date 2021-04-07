@@ -278,4 +278,36 @@ class VestResponseSerializerTest {
             )
         )
     }
+
+    @Test
+    fun `serialize returns quantity 0 when applicable`() {
+        val aliceCancel1000 = VestEvent(
+            type = CANCEL,
+            employeeId = "E001",
+            employeeName = "Alice Smith",
+            awardId = "ISO-001",
+            date = Date.valueOf("2020-01-02"),
+            quantity = BigDecimal.valueOf(1000.00)
+        )
+
+        val aliceVest1000 = VestEvent(
+            type = VEST,
+            employeeId = "E001",
+            employeeName = "Alice Smith",
+            awardId = "ISO-001",
+            date = Date.valueOf("2020-01-01"),
+            quantity = BigDecimal.valueOf(1000.00)
+        )
+
+        val result = VestResponseSerializer.serialize(listOf(aliceCancel1000,aliceVest1000))
+
+        assertThat(result).containsExactly(
+            VestResponse(
+                employeeId = "E001",
+                employeeName = "Alice Smith",
+                awardId = "ISO-001",
+                quantity = BigDecimal.valueOf(0.00)
+            )
+        )
+    }
 }
